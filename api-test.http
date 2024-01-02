@@ -1,0 +1,2 @@
+### GET aircraft
+GET http://localhost:7634/aircraft
