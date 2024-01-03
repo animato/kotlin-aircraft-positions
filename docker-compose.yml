@@ -1,4 +1,8 @@
 services:
+  planefinder:
+    image: 'planefinder'
+    ports:
+      - '7634:7634'
   redis:
     image: 'redis'
     ports:
