@@ -25,14 +25,5 @@ fun main(args: Array<String>) {
 
 @Configuration
 class Configuration {
-    @Bean
-    fun redisOperations(objectMapper: ObjectMapper, factory: RedisConnectionFactory): RedisOperations<String, Aircraft> {
-        val serializer = Jackson2JsonRedisSerializer(objectMapper, Aircraft::class.java)
-        val template: RedisTemplate<String, Aircraft> = RedisTemplate()
-        template.connectionFactory = factory
-        template.setDefaultSerializer(serializer) // TODO 이건 왜 set method?
-        template.keySerializer = StringRedisSerializer()
 
-        return template
-    }
 }

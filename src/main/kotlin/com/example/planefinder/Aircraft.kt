@@ -3,8 +3,11 @@ package com.example.planefinder
 import com.fasterxml.jackson.databind.PropertyNamingStrategies
 import com.fasterxml.jackson.databind.annotation.JsonNaming
 import org.springframework.data.annotation.Id
+import org.springframework.data.redis.core.RedisHash
+import java.time.Instant
 
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy::class)
+@RedisHash
 data class Aircraft(
     @Id
     var id: Long,
@@ -22,7 +25,8 @@ data class Aircraft(
     var vertRate: Int,
     var selectedAltitude: Int,
 
-    var isOnGround: Boolean
+    var isOnGround: Boolean,
+    var lastSeenTime: Instant
 
 ) {
 
