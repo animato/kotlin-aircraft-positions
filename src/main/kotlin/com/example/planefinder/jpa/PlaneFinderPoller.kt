@@ -1,4 +1,4 @@
-package com.example.planefinder
+package com.example.planefinder.jpa
 
 import org.springframework.data.redis.connection.RedisConnectionFactory
 import org.springframework.scheduling.annotation.EnableScheduling
@@ -8,10 +8,10 @@ import org.springframework.web.reactive.function.client.WebClient
 import org.springframework.web.reactive.function.client.bodyToFlux
 
 @EnableScheduling
-@Component
+@Component("jpa-poller")
 class PlaneFinderPoller(
     val connectionFactory: RedisConnectionFactory,
-    val repository: AircraftRepository
+    val repository: AircraftJpaRepository
 ) {
     var client: WebClient = WebClient.create("http://localhost:7634/aircraft")
 
@@ -21,7 +21,7 @@ class PlaneFinderPoller(
 
         client.get()
             .retrieve()
-            .bodyToFlux<Aircraft>()
+            .bodyToFlux<AircraftJpa>()
             .filter { p -> p.reg.isNotEmpty() }
             .toStream()
             .forEach(repository::save)

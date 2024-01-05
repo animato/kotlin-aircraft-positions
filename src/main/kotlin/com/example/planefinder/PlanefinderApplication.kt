@@ -10,9 +10,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 import org.springframework.data.redis.connection.RedisConnectionFactory
 import org.springframework.data.redis.core.RedisOperations
 import org.springframework.data.redis.core.RedisTemplate
+import org.springframework.data.redis.repository.configuration.EnableRedisRepositories
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer
 import org.springframework.data.redis.serializer.StringRedisSerializer
 
@@ -24,6 +26,8 @@ fun main(args: Array<String>) {
 }
 
 @Configuration
+@EnableJpaRepositories(basePackages = ["com.example.planefinder.jpa"])
+@EnableRedisRepositories(basePackages = ["com.example.planefinder.redis"])
 class Configuration {
 
 }

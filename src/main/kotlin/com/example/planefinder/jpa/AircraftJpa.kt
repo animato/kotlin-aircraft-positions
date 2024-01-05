@@ -1,15 +1,17 @@
-package com.example.planefinder
+package com.example.planefinder.jpa
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategies
 import com.fasterxml.jackson.databind.annotation.JsonNaming
-import org.springframework.data.annotation.Id
-import org.springframework.data.redis.core.RedisHash
+import jakarta.persistence.Entity
+import jakarta.persistence.GeneratedValue
+import jakarta.persistence.Id
 import java.time.Instant
 
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy::class)
-@RedisHash
-data class Aircraft(
+@Entity
+data class AircraftJpa(
     @Id
+    @GeneratedValue
     var id: Long,
     var callsign: String,
     var squawk: String,

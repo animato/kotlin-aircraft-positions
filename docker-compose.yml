@@ -3,6 +3,14 @@ services:
     image: 'planefinder'
     ports:
       - '7634:7634'
+  database:
+    image: 'postgres'
+    ports:
+      - '15432:5432'
+    environment:
+      - 'POSTGRES_USER=myuser'
+      - 'POSTGRES_DB=mydatabase'
+      - 'POSTGRES_PASSWORD=secret'
   redis:
     image: 'redis'
     ports:
