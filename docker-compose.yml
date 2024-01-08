@@ -4,13 +4,13 @@ services:
     ports:
       - '7634:7634'
   database:
-    image: 'postgres'
+    image: 'mysql'
     ports:
-      - '15432:5432'
+      - '13306:3306'
     environment:
-      - 'POSTGRES_USER=myuser'
-      - 'POSTGRES_DB=mydatabase'
-      - 'POSTGRES_PASSWORD=secret'
+#      - 'MYSQL_USER=myuser'
+      - 'MYSQL_DATABASE=mydatabase'
+      - 'MYSQL_ROOT_PASSWORD=secret'
   redis:
     image: 'redis'
     ports:

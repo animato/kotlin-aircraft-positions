@@ -5,10 +5,12 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.Id
+import jakarta.persistence.Table
 import java.time.Instant
 
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy::class)
 @Entity
+@Table(name = "aircraft")
 data class AircraftJpa(
     @Id
     @GeneratedValue

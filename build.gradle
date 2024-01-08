@@ -29,8 +29,9 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-reactor'
 
     developmentOnly 'org.springframework.boot:spring-boot-docker-compose'
-    runtimeOnly 'org.postgresql:postgresql'
+//    runtimeOnly 'org.postgresql:postgresql'
 
+    runtimeOnly 'com.mysql:mysql-connector-j:8.2.0'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'io.projectreactor:reactor-test'
 }
