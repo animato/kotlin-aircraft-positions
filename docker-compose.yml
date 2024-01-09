@@ -33,3 +33,10 @@ services:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
       ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
+  neo4j:
+    image: 'neo4j'
+    ports:
+      - '7474'
+      - '7687'
+    environment:
+      NEO4J_AUTH: neo4j/password

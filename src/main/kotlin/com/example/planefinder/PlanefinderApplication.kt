@@ -11,6 +11,8 @@ import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories
+import org.springframework.data.neo4j.repository.config.EnableNeo4jRepositories
 import org.springframework.data.redis.connection.RedisConnectionFactory
 import org.springframework.data.redis.core.RedisOperations
 import org.springframework.data.redis.core.RedisTemplate
@@ -26,6 +28,8 @@ fun main(args: Array<String>) {
 }
 
 @Configuration
+@EnableNeo4jRepositories(basePackages = ["com.example.planefinder.neo4j"])
+@EnableMongoRepositories(basePackages = ["com.example.planefinder.mongo"])
 @EnableJpaRepositories(basePackages = ["com.example.planefinder.jpa"])
 @EnableRedisRepositories(basePackages = ["com.example.planefinder.redis"])
 class Configuration {
