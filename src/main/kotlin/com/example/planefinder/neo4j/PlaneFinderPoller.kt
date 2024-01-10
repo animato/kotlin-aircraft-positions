@@ -13,7 +13,7 @@ class PlaneFinderPoller(
 ) {
     var client: WebClient = WebClient.create("http://localhost:7634/aircraft")
 
-    @Scheduled(fixedRate = 1000)
+//    @Scheduled(fixedRate = 1000)
     fun pollPlanes() {
         repository.deleteAll()
 
