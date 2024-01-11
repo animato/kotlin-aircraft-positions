@@ -1,4 +1,4 @@
-package com.example.planefinder.redis
+package com.example.aircraft.redis
 
 import org.springframework.data.repository.CrudRepository
 

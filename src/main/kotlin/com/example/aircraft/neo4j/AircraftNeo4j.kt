@@ -1,17 +1,19 @@
-package com.example.planefinder.jpa
+package com.example.aircraft.neo4j
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategies
 import com.fasterxml.jackson.databind.annotation.JsonNaming
-import jakarta.persistence.Entity
-import jakarta.persistence.Id
-import jakarta.persistence.Table
+import org.springframework.data.neo4j.core.schema.GeneratedValue
+import org.springframework.data.neo4j.core.schema.Id
+import org.springframework.data.neo4j.core.schema.Node
 import java.time.Instant
 
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy::class)
-@Entity
-@Table(name = "aircraft")
-data class AircraftJpa(
+@Node
+data class AircraftNeo4j(
     @Id
+    @GeneratedValue
+    var neoId: Long, // Neo4j는 엔티티에 이미 고유 식별자가 있더라도 데이터베이스에서 생성한 고유 식별자가 필요함
+
     var id: Long,
     var callsign: String,
     var squawk: String,
@@ -23,9 +25,7 @@ data class AircraftJpa(
     var altitude: Int,
     var heading: Int,
     var speed: Int,
-    var lat: Double,
-    var lon: Double,
-    var barometer: Double,
+
     var vertRate: Int,
     var selectedAltitude: Int,
 

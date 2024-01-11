@@ -1,7 +1,7 @@
-package com.example.planefinder.controller
+package com.example.aircraft.controller
 
-import com.example.planefinder.jpa.AircraftJpa
-import com.example.planefinder.jpa.AircraftJpaRepository
+import com.example.aircraft.jpa.AircraftJpa
+import com.example.aircraft.jpa.AircraftJpaRepository
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping

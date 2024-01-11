@@ -1,4 +1,4 @@
-package com.example.planefinder.mongo
+package com.example.aircraft.mongo
 
 import org.springframework.data.repository.CrudRepository
 

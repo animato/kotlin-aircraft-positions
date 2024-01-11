@@ -1,4 +1,4 @@
-package com.example.planefinder.redis
+package com.example.aircraft.redis
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategies
 import com.fasterxml.jackson.databind.annotation.JsonNaming

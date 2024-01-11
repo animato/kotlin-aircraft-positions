@@ -1,4 +1,4 @@
-package com.example.planefinder.jpa
+package com.example.aircraft.jpa
 
 import org.springframework.scheduling.annotation.EnableScheduling
 import org.springframework.stereotype.Component

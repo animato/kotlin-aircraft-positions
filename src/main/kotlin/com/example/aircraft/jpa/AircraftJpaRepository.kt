@@ -1,4 +1,4 @@
-package com.example.planefinder.jpa
+package com.example.aircraft.jpa
 
 import org.springframework.data.repository.CrudRepository
 

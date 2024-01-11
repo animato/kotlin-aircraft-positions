@@ -1,4 +1,4 @@
-package com.example.planefinder.neo4j
+package com.example.aircraft.neo4j
 
 import org.springframework.scheduling.annotation.EnableScheduling
 import org.springframework.scheduling.annotation.Scheduled

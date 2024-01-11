@@ -1,14 +1,16 @@
-package com.example.planefinder.mongo
+package com.example.aircraft.jpa
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategies
 import com.fasterxml.jackson.databind.annotation.JsonNaming
-import org.springframework.data.annotation.Id
-import org.springframework.data.mongodb.core.mapping.Document
+import jakarta.persistence.Entity
+import jakarta.persistence.Id
+import jakarta.persistence.Table
 import java.time.Instant
 
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy::class)
-@Document
-data class AircraftMongo(
+@Entity
+@Table(name = "aircraft")
+data class AircraftJpa(
     @Id
     var id: Long,
     var callsign: String,
@@ -21,7 +23,9 @@ data class AircraftMongo(
     var altitude: Int,
     var heading: Int,
     var speed: Int,
-
+    var lat: Double,
+    var lon: Double,
+    var barometer: Double,
     var vertRate: Int,
     var selectedAltitude: Int,
 
