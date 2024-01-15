@@ -1,8 +1,13 @@
 services:
-  planefinder:
-    image: 'planefinder'
+  rabbitmq:
+    image: rabbitmq:management
     ports:
-      - '7634:7634'
+      - "5672:5672"
+      - "15672:15672"
+#  planefinder:
+#    image: 'planefinder'
+#    ports:
+#      - '7634:7634'
   database:
     image: 'mysql'
     ports:
